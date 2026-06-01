@@ -1,0 +1,25 @@
+from pydantic import BaseModel
+class Paciente(BaseModel):
+    id: int
+    nombre: str
+    email: str
+    telefono: str
+class Profesional(BaseModel):
+    id: int
+    nombre: str
+    especialidad_id: int
+class Especialidad(BaseModel):
+    id: int
+    nombre: str
+class Cita(BaseModel):
+    id: int
+    paciente_id: int
+    profesional_id: int
+    fecha: str
+    estado: str
+class Horario(BaseModel):
+    id: int
+    profesional_id: int
+    dia: str
+    hora_inicio: str
+    hora_fin: str
